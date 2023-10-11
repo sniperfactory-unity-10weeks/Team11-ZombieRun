@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    //사용자 입력 감지
+     //사용자 입력 감지
 
     //--Axis name--//
     string moveVerticalName = "Vertical";   //앞뒤 움직임
@@ -33,4 +33,6 @@ public class PlayerInput : MonoBehaviour
         }
 
     }
+     
+
 }

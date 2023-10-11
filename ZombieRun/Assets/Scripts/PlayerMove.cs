@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    float moveSpeed = 5f;
+     float moveSpeed = 5f;
     float rotateSpeed = 10f;
 
     PlayerInput playerInput; //플레이어의 입력을 알려주는 컴포넌트
@@ -54,4 +54,6 @@ public class PlayerMove : MonoBehaviour
             transform.Rotate(0, playerInput.rotateX * rotateSpeed, 0);
         }
     }
+     
+
 }
