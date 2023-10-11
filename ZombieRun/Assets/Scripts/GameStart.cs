@@ -9,6 +9,7 @@ public class GameStart : MonoBehaviour
     // 팝업 창, 텍스트
     [SerializeField] private GameObject PopUp;
     [SerializeField] private Text txt;
+    [SerializeField] private Text Title;
 
     // 버튼 패널
     [SerializeField] private GameObject ButtonPanel;
@@ -28,6 +29,7 @@ public class GameStart : MonoBehaviour
         ButtonPanel.SetActive(false);   // 버튼 비활성화
         PopUp.SetActive(true);  // 팝업창 띄우기
         txt.text = "Credit Credit";
+        Title.text = "Credit";
     }
 
     // 라이선스 버튼 클릭,
@@ -36,6 +38,7 @@ public class GameStart : MonoBehaviour
         ButtonPanel.SetActive(false);   // 버튼 비활성화
         PopUp.SetActive(true);  // 팝업창 띄우기
         txt.text = "Licence Licence";
+        Title.text = "Licence";
     }
 
     // 게임 종료 버튼 클릭,
