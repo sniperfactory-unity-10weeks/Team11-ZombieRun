@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     float moveSpeed = 5f;
+    float rotateSpeed = 10f;
 
     PlayerInput playerInput; //플레이어의 입력을 알려주는 컴포넌트
     Rigidbody playerRigidbody;
@@ -22,7 +23,7 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-
+        Rotate();
     }
 
     private void Move()
@@ -40,5 +41,13 @@ public class PlayerMove : MonoBehaviour
         }
 
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
+    }
+
+    private void Rotate()
+    {
+        if (playerInput.rotateX != 0)
+        {
+            transform.Rotate(0, playerInput.rotateX * rotateSpeed, 0);
+        }
     }
 }
