@@ -28,19 +28,23 @@ public class PlayerMove : MonoBehaviour
 
     private void Move()
     {
+        bool isMove = false;
         //WASD 상하좌우 이동
         Vector3 moveDistance = new Vector3();
         //상하 이동
         if (playerInput.moveV != 0)
         {
+            isMove = true;
             moveDistance += playerInput.moveV * transform.forward * moveSpeed * Time.deltaTime;
         }
         if(playerInput.moveH != 0)
         {
+            isMove = true;
             moveDistance += playerInput.moveH * transform.right * moveSpeed * Time.deltaTime;
         }
 
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
+        playerAnimator.SetBool("isWalk", isMove);
     }
 
     private void Rotate()
