@@ -1,0 +1,273 @@
+{
+  "LeftKey": [
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "열쇠 조각인가? 왜 이런 곳에...",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "Key1",
+      "dialogue": "뭐 열쇠조각 처음 보냐!",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "뭐야!...열쇠가 말을 하잖아!!",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "Key1",
+      "dialogue": "열쇠면 뭐 말하면 안되냐!!",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "?????;;;",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "2",
+      "name": "Player",
+      "dialogue": "이제 어쩌지...",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "2",
+      "name": "Key1",
+      "dialogue": "뭐야 나한테 물어본거야?",
+      "itemCode": "1"
+    },
+    {
+      "branch": "2",
+      "name": "Player",
+      "dialogue": "여기 너 말고 누가 있냐",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "2",
+      "name": "Key1",
+      "dialogue": "저 쪽에 집주인인 좀비씨 계시네",
+      "itemCode": "1"
+    },
+    {
+      "branch": "2",
+      "name": "Player",
+      "dialogue": "뭐??? 좀비인데 집주인고 자시고 뭔 상관이야!",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "2",
+      "name": "Key1",
+      "dialogue": "..........",
+      "itemCode": "1"
+    },
+    {
+      "branch": "2",
+      "name": "Key1",
+      "dialogue": "얼마전에 은행일도 보시고 오셨는데?",
+      "itemCode": "1"
+    },
+    {
+      "branch": "2",
+      "name": "Player",
+      "dialogue": "??????????????",
+      "itemCode": "-1"
+    }
+  ],
+  "RightKey": [
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "설마...너도 말하니...?",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "Key1",
+      "dialogue": "멍청하긴 열쇠가 어떻게 말을 하냐?",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "(뭐지....?)",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "Key1",
+      "dialogue": "뭐 왜 뭐!..뭐!",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "아니다...",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "Key2",
+      "dialogue": "아...오셨어요? 늦어서 깜빡 잠들어 버렸네요",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "뭐야 말하잖아?!",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "Key2",
+      "dialogue": "뭐 열쇠니깐 당연히 말을 하죠~",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "Key1",
+      "dialogue": "......",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "......",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "2",
+      "name": "Player",
+      "dialogue": "여기서 나가는 방법 알아?",
+      "itemCode": "1"
+    },
+    {
+      "branch": "2",
+      "name": "Key1",
+      "dialogue": "그걸 나한테 물어 본들...",
+      "itemCode": "1"
+    },
+    {
+      "branch": "2",
+      "name": "Key2",
+      "dialogue": "아 저쪽 중앙방에 열쇠 들고 나가시면 돼요",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "2",
+      "name": "Player",
+      "dialogue": "......",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "2",
+      "name": "Key1",
+      "dialogue": "나를 왜 보냐;;; 모를 수도 있지...",
+      "itemCode": "1"
+    }
+  ],
+  "FinishKey": [
+    {
+      "branch": "1",
+      "name": "Key1",
+      "dialogue": "할아버지 저희 왔어요",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "FKey",
+      "dialogue": "욘석 노크도 없이 오다니 버르장머리 하고는...",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "Key2",
+      "dialogue": "할아버지도 여전하시네요~",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "(이 녀석들 진짜 뭐지...?)",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "어르신...안녕하세요, 혹시 괜찮으시다면 저가 나갈 수 있게 도와주실 수 있나요...?",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "FKey",
+      "dialogue": "오냐 어려울 것도 없지 어서 나가세",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "감사합니다!!",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "FKey",
+      "dialogue": "허허 어려운 것도 아닌데 뭘 그러나",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "FKey",
+      "dialogue": "아...나간다니 내가 LA에 있을 때가 생각이 나는구나...",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "Key1",
+      "dialogue": "할아버지 그 얘기 저번주에도 하셨어요",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "FKey",
+      "dialogue": "아...여기서 부터가 진짜 재미있는 구간인데...",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "Key2",
+      "dialogue": "어르신 어서 가시죠",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "FKey",
+      "dialogue": "힝...",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "FKey",
+      "dialogue": "그럼 마지막으로 가기전에!!! 이봐 젊은이...이 집의 슬픈 전설을...",
+      "itemCode": "-1"
+    },
+    {
+      "branch": "1",
+      "name": "Player",
+      "dialogue": "어르신 감사합니다 안녕히계세요!!! 그럼!!",
+      "itemCode": "1"
+    },
+    {
+      "branch": "1",
+      "name": "FKey",
+      "dialogue": "아",
+      "itemCode": "1"
+    }
+  ]
+
+}
