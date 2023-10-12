@@ -19,16 +19,18 @@ public class GameManager : MonoBehaviour
     }
 
     public bool isGameOver = false; //게임 오버가 되면 true
+    public GameObject CameraSet;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        CameraSet.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (isGameOver)
+        {
+            CameraSet.SetActive(true);
+        }
     }
 }
