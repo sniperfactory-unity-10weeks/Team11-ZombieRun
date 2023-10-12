@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject KeyR_Null;
     [SerializeField] private GameObject KeyF;
     [SerializeField] private GameObject KeyF_Null;
+    [SerializeField] private GameObject Ring;
+    [SerializeField] private GameObject Ring_Null;
 
     // OpenDoor ÆË¾÷
     [SerializeField] private GameObject DoorPopUp;
@@ -66,6 +68,10 @@ public class UIManager : MonoBehaviour
                 KeyF_Null.SetActive(false);
                 KeyF.SetActive(true);
                 break;
+            case 3:
+                Ring_Null.SetActive(false);
+                Ring.SetActive(true);
+                break;
         }
     }
 
@@ -95,7 +101,7 @@ public class UIManager : MonoBehaviour
     IEnumerator AttackedEffect()
     {
         AttackedEffectPanel.SetActive(true);
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.7f);
         AttackedEffectPanel.SetActive(false);
     }
 

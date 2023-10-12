@@ -6,59 +6,67 @@ using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour
 {
-    // ÆË¾÷ Ã¢, ÅØ½ºÆ®
-    [SerializeField] private GameObject PopUp;
+    // ï¿½Ë¾ï¿½ Ã¢, ï¿½Ø½ï¿½Æ®
+    [SerializeField] private GameObject CreditPopUp;
+    [SerializeField] private GameObject LicencePopUp;
     [SerializeField] private Text txt;
     [SerializeField] private Text Title;
 
-    // ¹öÆ° ÆÐ³Î
+    // ï¿½ï¿½Æ° ï¿½Ð³ï¿½
     [SerializeField] private GameObject ButtonPanel;
 
-    // °ÔÀÓ Á¾·á ÆË¾÷
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¾ï¿½
     [SerializeField] private GameObject ExitPopUp;
 
-    // °ÔÀÓ ½ÃÀÛ ¹öÆ° Å¬¸¯, ¸ÞÀÎ Scene ·Îµå
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ Scene ï¿½Îµï¿½
     public void LoadMain()
     {
         SceneManager.LoadScene("Main");
     }
 
-    // Å©·¹µ÷ ¹öÆ° Å¬¸¯,
+    // Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½,
     public void Credit()
     {
-        ButtonPanel.SetActive(false);   // ¹öÆ° ºñÈ°¼ºÈ­
-        PopUp.SetActive(true);  // ÆË¾÷Ã¢ ¶ç¿ì±â
+        ButtonPanel.SetActive(false);   // ï¿½ï¿½Æ° ï¿½ï¿½È°ï¿½ï¿½È­
+        CreditPopUp.SetActive(true);  // ï¿½Ë¾ï¿½Ã¢ ï¿½ï¿½ï¿½ï¿½
     }
 
-    // ¶óÀÌ¼±½º ¹öÆ° Å¬¸¯,
+    // ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½,
     public void Licence()
     {
-        ButtonPanel.SetActive(false);   // ¹öÆ° ºñÈ°¼ºÈ­
-        PopUp.SetActive(true);  // ÆË¾÷Ã¢ ¶ç¿ì±â
+        ButtonPanel.SetActive(false);   // ï¿½ï¿½Æ° ï¿½ï¿½È°ï¿½ï¿½È­
+        LicencePopUp.SetActive(true);  // ï¿½Ë¾ï¿½Ã¢ ï¿½ï¿½ï¿½ï¿½
     }
 
-    // °ÔÀÓ Á¾·á ¹öÆ° Å¬¸¯,
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½,
     public void ClickExit()
     {
         ExitPopUp.SetActive(true);
 
     }
-    // °ÔÀÓ Á¾·á ÇÏ±â
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï±ï¿½
     public void ExitGame()
     {
-        Application.Quit(); // ¿¡µðÅÍ¿¡¼­´Â ½ÇÇà XXX
+        Application.Quit(); // ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ XXX
     }
-    // °ÔÀÓ Á¾·á ¾È ÇÏ±â
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ï±ï¿½
     public void CloseExitPopUp()
     {
-        ButtonPanel.SetActive(true);   // ¹öÆ° ºñÈ°¼ºÈ­
-        ExitPopUp.SetActive(false);  // ÆË¾÷Ã¢ ¶ç¿ì±â
+        ButtonPanel.SetActive(true);   // ï¿½ï¿½Æ° ï¿½ï¿½È°ï¿½ï¿½È­
+        ExitPopUp.SetActive(false);  // ï¿½Ë¾ï¿½Ã¢ ï¿½ï¿½ï¿½ï¿½
     }
 
-    // ÆË¾÷ Á¾·á ¹öÆ° Å¬¸¯,
-    public void ClosePopUp()
+    // Å©ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½,
+    public void CloseCreditPopUp()
     {
-        ButtonPanel.SetActive(true);   // ¹öÆ° ºñÈ°¼ºÈ­
-        PopUp.SetActive(false);  // ÆË¾÷Ã¢ ¶ç¿ì±â
+        ButtonPanel.SetActive(true);   // ï¿½ï¿½Æ° È°ï¿½ï¿½È­
+        CreditPopUp.SetActive(false);  // ï¿½Ë¾ï¿½Ã¢ ï¿½ï¿½ï¿½ï¿½ï¿½
+    }
+
+    // ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ ï¿½Ë¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½,
+    public void CloseLecencePopUp()
+    {
+        ButtonPanel.SetActive(true);   // ï¿½ï¿½Æ° È°ï¿½ï¿½È­
+        LicencePopUp.SetActive(false);   // ï¿½Ë¾ï¿½Ã¢ ï¿½ï¿½ï¿½ï¿½ï¿½
     }
 }
