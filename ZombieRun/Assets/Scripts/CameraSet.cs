@@ -5,18 +5,19 @@ using UnityEngine;
 public class CameraSet : MonoBehaviour
 {
 
-    public Camera PlayerCam;
-    public Camera GameOverCam;
-	private void OnDisable()
-	{
-		PlayerCam.enabled = true;
-		GameOverCam.enabled = false;
-	}
+    public GameObject PlayerCam;
+    public GameObject GameOverCam;
 
-	//플레이어 사망시 활성화
-	void OnEnable()
+    void Start()
     {
-		GameOverCam.enabled = true;
-		PlayerCam.enabled = false;
+        GameOverCam.SetActive(false);
+        PlayerCam.SetActive(true);
+    }
+
+    //플레이어 사망시 활성화
+    void OnEnable()
+    {
+        GameOverCam.SetActive(true);
+        PlayerCam.SetActive(false);
     }
 }

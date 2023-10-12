@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 	public static Animator anim;
 	public static bool isInteract;
 
-    //private CharacterController Controller;
+    private CharacterController Controller;
     private Vector3 CurrentMoveVelocity;
     private Vector3 MoveDampVelocity;
 
@@ -31,12 +31,17 @@ public class PlayerMovement : MonoBehaviour
 	private void Awake()
 	{
 		if(instance == null) PlayerMovement.instance = this;
+		anim = GetComponent<Animator>();
 	}
-    
-    public void PlayerInteract()
+
+	void Start()
     {
-		/*
-		 //움직임
+        Controller = GetComponent<CharacterController>();
+    }
+    
+    void PlayerInput()
+    {
+		//움직임
 		Vector3 PlayerInput = new Vector3
 		{
 			x = Input.GetAxisRaw("Horizontal"),
@@ -56,11 +61,11 @@ public class PlayerMovement : MonoBehaviour
 			MoveVector * CurrentSpeed,
 			ref MoveDampVelocity,
 			MoveSmoothTime);
+		
 
 
-
-		//점프
-		Ray groundCheckRay = new Ray(transform.position, Vector3.down);
+        //점프
+        Ray groundCheckRay = new Ray(transform.position, Vector3.down);
 
 		if (Physics.Raycast(groundCheckRay, 1.1f))
 		{
@@ -75,8 +80,6 @@ public class PlayerMovement : MonoBehaviour
 		{
 			CurrentForecVelocity.y -= GravityStrength * Time.deltaTime;
 		}
-		 */
-
 
 		//상호작용 버튼!
 		if (Input.GetKeyDown(KeyCode.E)
@@ -95,11 +98,17 @@ public class PlayerMovement : MonoBehaviour
 		if(!isInteract)
         {
 			//앞뒤좌우
-            //Controller.Move(CurrentMoveVelocity * Time.deltaTime);
+            Controller.Move(CurrentMoveVelocity * Time.deltaTime);
             //점프
-            //Controller.Move(CurrentForecVelocity * Time.deltaTime);
+            Controller.Move(CurrentForecVelocity * Time.deltaTime);
         }
 		
+	}
+
+    void Update()
+    {
+		PlayerInput();
+		PlayerMove();
 	}
 
 
