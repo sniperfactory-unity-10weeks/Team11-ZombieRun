@@ -10,9 +10,6 @@ public class Player : MonoBehaviour
     public AudioClip dieSound; // 사망 시 재생할 소리
     public AudioClip hitSound; // 피격 시 재생할 소리
 
-
-    private AudioSource audioSource;
-
     public AudioClip damageSound; // 피격 사운드를 위한 AudioClip
     public AudioClip deathSound; // 사망 사운드를 위한 AudioClip
 
@@ -64,5 +61,6 @@ public class Player : MonoBehaviour
         {
             audioSource.PlayOneShot(sound);
 
+        }
     }
 }
