@@ -193,10 +193,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 385333119519184028, guid: 982de896864b64323b486344285af1f3, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 159b9180487295b44aa593848f5394bc, type: 2}
     - target: {fileID: 8910189851286522525, guid: 982de896864b64323b486344285af1f3, type: 3}
       propertyPath: m_Name
       value: LevelMap
