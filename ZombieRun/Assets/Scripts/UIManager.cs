@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -29,6 +30,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject KeyR_Null;
     [SerializeField] private GameObject KeyF;
     [SerializeField] private GameObject KeyF_Null;
+
+    // OpenDoor 팝업
+    [SerializeField] private GameObject DoorPopUp;
+
+    // 공격 받으면 화면 붉어짐
+    [SerializeField] private GameObject AttackedEffectPanel;
 
     // HP바 설정, Player 스크립트에서 공격 받을 시 호출
     public void UpdateHealthBar(float damage)
@@ -58,4 +65,28 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // 문 클릭 시 팝업 활성화
+    public void PopUp()
+    {
+        DoorPopUp.SetActive(true);
+    }
+    // 팝업 yes, 엔딩 씬 로드
+    public void OpenDoor()
+    {
+        // SceneManager.LoadScene("Ending");
+    }
+    // 팝업 No, 팝업 지우기
+    public void ClosePopUp()
+    {
+        DoorPopUp.SetActive(false);
+    }
+
+    // 공격 받을 시 화면 붉어짐
+    // StartCoroutine("AttackedEffect"); 호출
+    IEnumerator AttackedEffect()
+    {
+        AttackedEffectPanel.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        AttackedEffectPanel.SetActive(false);
+    }
 }
