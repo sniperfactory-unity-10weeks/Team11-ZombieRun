@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     float moveSpeed = 5f;
     float rotateSpeed = 10f;
 
-    PlayerInput playerInput; //ÇÃ·¹ÀÌ¾îÀÇ ÀÔ·ÂÀ» ¾Ë·ÁÁÖ´Â ÄÄÆ÷³ÍÆ®
+    PlayerInput playerInput; //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
     Rigidbody playerRigidbody;
     public Animator playerAnimator;
 
@@ -35,9 +35,9 @@ public class PlayerMove : MonoBehaviour
     private void Move()
     {
         bool isMove = false;
-        //WASD »óÇÏÁÂ¿ì ÀÌµ¿
+        //WASD ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½Ìµï¿½
         Vector3 moveDistance = new Vector3();
-        //»óÇÏ ÀÌµ¿
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
         if (playerInput.moveV != 0)
         {
             isMove = true;
