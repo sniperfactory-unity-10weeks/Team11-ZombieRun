@@ -40,7 +40,7 @@ public class MsgDisp : MonoBehaviour
 		GUIStyle msgFont = new GUIStyle
 		{
 			fontSize = (int)(30 * gui_scale),
-			wordWrap = true
+			wordWrap = true,
 		};
 
 		if (eventText && !flagDiaplay)

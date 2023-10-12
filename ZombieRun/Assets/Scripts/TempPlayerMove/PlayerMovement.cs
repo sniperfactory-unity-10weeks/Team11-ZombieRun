@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 	public static bool isTalk = false;
 	public static GameObject whoTalk;
 	public static Animator anim;
+	public static bool isInteract;
 
     private CharacterController Controller;
     private Vector3 CurrentMoveVelocity;
@@ -54,14 +55,17 @@ public class PlayerMovement : MonoBehaviour
 		Vector3 MoveVector = transform.TransformDirection(PlayerInput);
 		float CurrentSpeed = Input.GetKey(KeyCode.LeftShift) ? RunSpeed : WalkSpeed;
 
+		
 		CurrentMoveVelocity = Vector3.SmoothDamp(
 			CurrentMoveVelocity,
 			MoveVector * CurrentSpeed,
 			ref MoveDampVelocity,
 			MoveSmoothTime);
+		
 
-		//점프
-		Ray groundCheckRay = new Ray(transform.position, Vector3.down);
+
+        //점프
+        Ray groundCheckRay = new Ray(transform.position, Vector3.down);
 
 		if (Physics.Raycast(groundCheckRay, 1.1f))
 		{
@@ -84,15 +88,21 @@ public class PlayerMovement : MonoBehaviour
 			&& whoTalk != null)
 		{
 			StartCoroutine(StartTalk(whoTalk));
-		}
+			isInteract = true;
+        }
 	}
 
 	void PlayerMove()
 	{
-		//앞뒤좌우
-		Controller.Move(CurrentMoveVelocity * Time.deltaTime);
-		//점프
-		Controller.Move(CurrentForecVelocity * Time.deltaTime);
+		
+		if(!isInteract)
+        {
+			//앞뒤좌우
+            Controller.Move(CurrentMoveVelocity * Time.deltaTime);
+            //점프
+            Controller.Move(CurrentForecVelocity * Time.deltaTime);
+        }
+		
 	}
 
     void Update()
@@ -161,6 +171,7 @@ public class PlayerMovement : MonoBehaviour
 					break;
 				}
 			}
+			//대화 끝나고 아이템 먹을 때 함수 한 번 더 호출해서 대화창 띄우고 변수초기화하고 끝
 			if (whoTalk != null)
 			{
 				whoTalk.SetActive(false);
