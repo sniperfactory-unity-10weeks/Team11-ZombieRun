@@ -12,6 +12,7 @@ public class CameraSet : MonoBehaviour
     {
         GameOverCam.SetActive(false);
         PlayerCam.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     //플레이어 사망시 활성화
