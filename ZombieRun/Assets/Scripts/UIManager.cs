@@ -37,6 +37,10 @@ public class UIManager : MonoBehaviour
     // 공격 받으면 화면 붉어짐
     [SerializeField] private GameObject AttackedEffectPanel;
 
+    // 게임오버
+    [SerializeField] private GameObject GameOverPanel;
+
+
     // HP바 설정, Player 스크립트에서 공격 받을 시 호출
     public void UpdateHealthBar(float damage)
     {
@@ -97,6 +101,11 @@ public class UIManager : MonoBehaviour
 
     
     // GameOver //
+    // 게임 오버 패널 활성화
+    public void GameOver()
+    {
+        GameOverPanel.SetActive(true);
+    }
     // 재시작 버튼 클릭, 메인 Scene 로드
     public void LoadMain()
     {
