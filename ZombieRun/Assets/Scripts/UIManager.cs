@@ -81,8 +81,14 @@ public class UIManager : MonoBehaviour
         DoorPopUp.SetActive(false);
     }
 
+    
     // 공격 받을 시 화면 붉어짐
-    // StartCoroutine("AttackedEffect"); 호출
+    public void Attacked()
+    {
+        StartCoroutine("AttackedEffect");
+    }
+
+    // 2초 동안 화면 붉어짐 효과 코루틴
     IEnumerator AttackedEffect()
     {
         AttackedEffectPanel.SetActive(true);

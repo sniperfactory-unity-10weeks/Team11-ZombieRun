@@ -12,10 +12,9 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
-    //////////////// 수정 ///////////////
     // 나가기 버튼 클릭, 시작 Scene 로드
-    public void LoadReady()
+    public void Exit()
     {
-        SceneManager.LoadScene("Ready");
+        SceneManager.LoadScene("Start");
     }
 }

@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
         //아직 죽지 않았다면 체력 감소 처리 실행
         if (!GameManager.instance.isGameOver)
         {
+            // 화면 일시적으로 붉어짐 효과
+            UIManager.instance.Attacked();
             // 대미지만큼 체력 감소
             playerHP -= damage;
             //만약 체력이 0 이하라면, 사망
