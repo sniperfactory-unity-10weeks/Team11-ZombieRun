@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject KeyR_Null;
     [SerializeField] private GameObject KeyF;
     [SerializeField] private GameObject KeyF_Null;
+    [SerializeField] private GameObject Ring;
+    [SerializeField] private GameObject Ring_Null;
 
     // OpenDoor ÆË¾÷
     [SerializeField] private GameObject DoorPopUp;
@@ -65,6 +67,10 @@ public class UIManager : MonoBehaviour
             case 2:
                 KeyF_Null.SetActive(false);
                 KeyF.SetActive(true);
+                break;
+            case 3:
+                Ring_Null.SetActive(false);
+                Ring.SetActive(true);
                 break;
         }
     }
