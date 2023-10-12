@@ -57,7 +57,7 @@ public class PlayerMove : MonoBehaviour
 
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
         playerAnimator.SetBool("isWalk", isMove);
-        playersource.PlayOneShot(playerfootstep);
+        playersource.PlayOneShot(playerfootstep)
     }
 
     private void Rotate()
