@@ -9,7 +9,11 @@ public class PlayerMove : MonoBehaviour
 
     PlayerInput playerInput; //�÷��̾��� �Է��� �˷��ִ� ������Ʈ
     Rigidbody playerRigidbody;
+    
+    public AudioClip playerfootstep;
     public Animator playerAnimator;
+
+    private AudioSource playersource;
 
     Quaternion nowRotate;
 
@@ -19,6 +23,8 @@ public class PlayerMove : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
+
+        playersource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,6 +57,7 @@ public class PlayerMove : MonoBehaviour
 
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
         playerAnimator.SetBool("isWalk", isMove);
+        playersource.PlayOneShot(playerfootstep);
     }
 
     private void Rotate()
