@@ -45,7 +45,7 @@ public class MsgDisp : MonoBehaviour
 
 		if (eventText && !flagDiaplay)
 		{
-			msgFont.normal.textColor = Color.white;
+			msgFont.normal.textColor = Color.black;
 			rtDisplay.x = (guiLeft + 30) * gui_scale;
 			rtDisplay.y = (guiTop + 60) * gui_scale;
 			GUI.Label(rtDisplay, "E를 눌러 상호작용!!", msgFont);
