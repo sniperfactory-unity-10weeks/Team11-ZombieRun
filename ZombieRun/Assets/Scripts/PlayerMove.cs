@@ -30,7 +30,6 @@ public class PlayerMove : MonoBehaviour
         }
         Move();
         Rotate();
-        PlayerMovement.instance.PlayerInteract();
     }
 
     private void Move()

@@ -7,10 +7,6 @@ TagManager:
   - LeftKey
   - RightKey
   - FinishKey
-  - RDoor
-  - LDoor
-  - OneDoor
-  - OneDoor2
   layers:
   - Default
   - TransparentFX
