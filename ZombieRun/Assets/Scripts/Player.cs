@@ -4,29 +4,33 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float playerHP = 10f; // ½ÃÀÛ Ã¼·Â 
+    public float playerHP = 10f;
     public float health { get; protected set; }
+
+    public AudioClip damageSound; // í”¼ê²© ì‚¬ìš´ë“œë¥¼ ìœ„í•œ AudioClip
+    public AudioClip deathSound; // ì‚¬ë§ ì‚¬ìš´ë“œë¥¼ ìœ„í•œ AudioClip
+
+    private AudioSource audioSource; // í”Œë ˆì´ì–´ì˜ AudioSource
 
     void Start()
     {
-        // Ã¼·ÂÀ» ½ÃÀÛÃ¼·ÂÀ¸·Î ÃÊ±âÈ­
         health = playerHP;
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // ´ë¹ÌÁö¸¦ ÀÔ´Â ±â´É
     public void OnDamage(float damage)
     {
-        Debug.Log("´ë¹ÌÁö!");
-        //¾ÆÁ÷ Á×Áö ¾Ê¾Ò´Ù¸é Ã¼·Â °¨¼Ò Ã³¸® ½ÇÇà
+        Debug.Log("í”¼ê²©!");
+
         if (!GameManager.instance.isGameOver)
         {
-            // È­¸é ÀÏ½ÃÀûÀ¸·Î ºÓ¾îÁü È¿°ú
+            // í”¼ê²© ì‚¬ìš´ë“œ ì¬ìƒ
+            PlaySound(damageSound);
+
             UIManager.instance.Attacked();
-            // ´ë¹ÌÁö¸¸Å­ Ã¼·Â °¨¼Ò
             playerHP -= damage;
-            // HP¹Ù ¼öÁ¤
             UIManager.instance.UpdateHealthBar(damage);
-            //¸¸¾à Ã¼·ÂÀÌ 0 ÀÌÇÏ¶ó¸é, »ç¸Á
+
             if (playerHP <= 0)
             {
                 UIManager.instance.GameOver();
@@ -35,13 +39,21 @@ public class Player : MonoBehaviour
         }
     }
 
-
-    // »ç¸Á Ã³¸®
     private void Die()
     {
-        // »ç¸Á »óÅÂ¸¦ ÂüÀ¸·Î º¯°æ
         GameManager.instance.isGameOver = true;
         PlayerMove pm = GetComponent<PlayerMove>();
         pm.playerAnimator.SetTrigger("isDead");
+
+        // ì‚¬ë§ ì‚¬ìš´ë“œ ì¬ìƒ
+        PlaySound(deathSound);
+    }
+
+    private void PlaySound(AudioClip sound)
+    {
+        if (audioSource != null && sound != null)
+        {
+            audioSource.PlayOneShot(sound);
+        }
     }
 }
