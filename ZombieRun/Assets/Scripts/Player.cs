@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float playerHP = 10f; // ���� ü�� 
+
+    public float playerHP = 10f;
     public float health { get; protected set; }
     public AudioClip dieSound; // 사망 시 재생할 소리
     public AudioClip hitSound; // 피격 시 재생할 소리
@@ -12,25 +13,33 @@ public class Player : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public AudioClip damageSound; // 피격 사운드를 위한 AudioClip
+    public AudioClip deathSound; // 사망 사운드를 위한 AudioClip
+
+    private AudioSource audioSource; // 플레이어의 AudioSource
+
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        // ü���� ����ü������ �ʱ�ȭ
         health = playerHP;
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // ������� �Դ� ���
     public void OnDamage(float damage)
     {
-        Debug.Log("�����!");
-        //���� ���� �ʾҴٸ� ü�� ���� ó�� ����
+        Debug.Log("피격!");
+
         if (!GameManager.instance.isGameOver)
         {
-            // �������ŭ ü�� ����
+            // 피격 사운드 재생
+            PlaySound(damageSound);
+
+            UIManager.instance.Attacked();
             playerHP -= damage;
-            //���� ü���� 0 ���϶��, ���
+            UIManager.instance.UpdateHealthBar(damage);
+
             if (playerHP <= 0)
             {
+                UIManager.instance.GameOver();
                 Die();
 
                 audioSource.PlayOneShot(hitSound); // 피격 효과음 재생
@@ -38,15 +47,22 @@ public class Player : MonoBehaviour
         }
     }
 
-
-    // ��� ó��
     private void Die()
     {
-        // ��� ���¸� ������ ����
         GameManager.instance.isGameOver = true;
         PlayerMove pm = GetComponent<PlayerMove>();
         pm.playerAnimator.SetTrigger("isDead");
-
         audioSource.PlayOneShot(dieSound); // Die효과음 재생
+
+        // 사망 사운드 재생
+        PlaySound(deathSound);
+    }
+
+    private void PlaySound(AudioClip sound)
+    {
+        if (audioSource != null && sound != null)
+        {
+            audioSource.PlayOneShot(sound);
+
     }
 }

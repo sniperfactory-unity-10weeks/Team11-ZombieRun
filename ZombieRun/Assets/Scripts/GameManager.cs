@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        CameraSet.SetActive(false);
+        //CameraSet.SetActive(false);
     }
 
     void Update()
