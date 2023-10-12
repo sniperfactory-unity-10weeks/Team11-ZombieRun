@@ -4,39 +4,48 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float playerHP = 10f; // ½ÃÀÛ Ã¼·Â 
+    public float playerHP = 10f; // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ 
     public float health { get; protected set; }
+    public AudioClip dieSound; // ì‚¬ë§ ì‹œ ì¬ìƒí•  ì†Œë¦¬
+    public AudioClip hitSound; // í”¼ê²© ì‹œ ì¬ìƒí•  ì†Œë¦¬
+
+
+    private AudioSource audioSource;
 
     void Start()
     {
-        // Ã¼·ÂÀ» ½ÃÀÛÃ¼·ÂÀ¸·Î ÃÊ±âÈ­
+        audioSource = GetComponent<AudioSource>();
+        // Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         health = playerHP;
     }
 
-    // ´ë¹ÌÁö¸¦ ÀÔ´Â ±â´É
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô´ï¿½ ï¿½ï¿½ï¿½
     public void OnDamage(float damage)
     {
-        Debug.Log("´ë¹ÌÁö!");
-        //¾ÆÁ÷ Á×Áö ¾Ê¾Ò´Ù¸é Ã¼·Â °¨¼Ò Ã³¸® ½ÇÇà
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½!");
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ò´Ù¸ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (!GameManager.instance.isGameOver)
         {
-            // ´ë¹ÌÁö¸¸Å­ Ã¼·Â °¨¼Ò
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å­ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             playerHP -= damage;
-            //¸¸¾à Ã¼·ÂÀÌ 0 ÀÌÇÏ¶ó¸é, »ç¸Á
+            //ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ 0 ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½, ï¿½ï¿½ï¿½
             if (playerHP <= 0)
             {
                 Die();
             }
+            audioSource.PlayOneShot(hitSound); // í”¼ê²© íš¨ê³¼ìŒ ì¬ìƒ
         }
     }
 
 
-    // »ç¸Á Ã³¸®
+    // ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
     private void Die()
     {
-        // »ç¸Á »óÅÂ¸¦ ÂüÀ¸·Î º¯°æ
+        // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         GameManager.instance.isGameOver = true;
         PlayerMove pm = GetComponent<PlayerMove>();
         pm.playerAnimator.SetTrigger("isDead");
+
+        audioSource.PlayOneShot(dieSound); // Dieíš¨ê³¼ìŒ ì¬ìƒ
     }
 }
