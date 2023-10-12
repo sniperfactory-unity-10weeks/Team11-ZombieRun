@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &278167202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278167204}
+  - component: {fileID: 278167203}
+  m_Layer: 0
+  m_Name: CameraSet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &278167203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278167202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f3b86d46dc5fb41982a35810839eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCam: {fileID: 966186265}
+  GameOverCam: {fileID: 1469320610}
+--- !u!4 &278167204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278167202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.2401485, y: 5.94776, z: 26.013597}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &300548327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,6 +381,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &966186265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6844609794576922446, guid: 4724fe5d04666b3459226e87df714864, type: 3}
+  m_PrefabInstance: {fileID: 1487503885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1469320610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3619943337158606386, guid: 7484ae604657a1d489dc4acee1053e91, type: 3}
+  m_PrefabInstance: {fileID: 300548327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1487503885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -387,26 +443,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8894833786314966228, guid: 4724fe5d04666b3459226e87df714864, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8894833786314966228, guid: 4724fe5d04666b3459226e87df714864, type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8894833786314966228, guid: 4724fe5d04666b3459226e87df714864, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8894833786314966228, guid: 4724fe5d04666b3459226e87df714864, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.90536475
-      objectReference: {fileID: 0}
-    - target: {fileID: 8894833786314966228, guid: 4724fe5d04666b3459226e87df714864, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.48490566
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -420,6 +456,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1593634912820136280, guid: 8f977f31d214ded4790621d840f76601, type: 3}
+      propertyPath: CameraSet
+      value: 
+      objectReference: {fileID: 278167202}
     - target: {fileID: 4353682572749646376, guid: 8f977f31d214ded4790621d840f76601, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.41548073
@@ -478,3 +518,4 @@ SceneRoots:
   - {fileID: 1487503885}
   - {fileID: 300548327}
   - {fileID: 114679745165005111}
+  - {fileID: 278167204}
