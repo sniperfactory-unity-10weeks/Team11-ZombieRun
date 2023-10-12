@@ -878,7 +878,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4441700664614820939}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4441700664614820939}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: LoadMain
         m_Mode: 1
@@ -2402,6 +2402,7 @@ MonoBehaviour:
   KeyF_Null: {fileID: 8366642954999632648}
   DoorPopUp: {fileID: 7665374798641981021}
   AttackedEffectPanel: {fileID: 8721310240839505105}
+  GameOverPanel: {fileID: 3509416162473185564}
 --- !u!1 &8697755651212279705
 GameObject:
   m_ObjectHideFlags: 0
