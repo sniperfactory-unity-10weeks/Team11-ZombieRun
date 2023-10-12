@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
     public float playerHP = 10f;
     public float health { get; protected set; }
+    public AudioClip dieSound; // 사망 시 재생할 소리
+    public AudioClip hitSound; // 피격 시 재생할 소리
 
     public AudioClip damageSound; // 피격 사운드를 위한 AudioClip
     public AudioClip deathSound; // 사망 사운드를 위한 AudioClip
@@ -35,6 +38,8 @@ public class Player : MonoBehaviour
             {
                 UIManager.instance.GameOver();
                 Die();
+
+                audioSource.PlayOneShot(hitSound); // 피격 효과음 재생
             }
         }
     }
@@ -44,6 +49,7 @@ public class Player : MonoBehaviour
         GameManager.instance.isGameOver = true;
         PlayerMove pm = GetComponent<PlayerMove>();
         pm.playerAnimator.SetTrigger("isDead");
+        audioSource.PlayOneShot(dieSound); // Die효과음 재생
 
         // 사망 사운드 재생
         PlaySound(deathSound);
@@ -54,6 +60,7 @@ public class Player : MonoBehaviour
         if (audioSource != null && sound != null)
         {
             audioSource.PlayOneShot(sound);
+
         }
     }
 }
