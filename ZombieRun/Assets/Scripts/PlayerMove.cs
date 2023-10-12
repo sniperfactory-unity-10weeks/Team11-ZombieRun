@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     Rigidbody playerRigidbody;
     public Animator playerAnimator;
 
+    Quaternion nowRotate;
+
 
     void Start()
     {
@@ -56,6 +58,11 @@ public class PlayerMove : MonoBehaviour
         if (playerInput.rotateX != 0)
         {
             transform.Rotate(0, playerInput.rotateX * rotateSpeed, 0);
+            nowRotate = transform.rotation;
+        }
+        else
+        {
+            transform.rotation = nowRotate;
         }
     }
      
