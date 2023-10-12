@@ -32,8 +32,9 @@ public class Player : MonoBehaviour
             if (playerHP <= 0)
             {
                 Die();
+
+                audioSource.PlayOneShot(hitSound); // 피격 효과음 재생
             }
-            audioSource.PlayOneShot(hitSound); // 피격 효과음 재생
         }
     }
 
