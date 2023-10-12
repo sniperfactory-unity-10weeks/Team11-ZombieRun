@@ -101,7 +101,7 @@
     {
       "branch": "1",
       "name": "Key1",
-      "dialogue": "뭐 왜 뭐!..뭐!",
+      "dialogue": "뭐",
       "itemCode": "1"
     },
     {
@@ -251,19 +251,19 @@
       "itemCode": "-1"
     },
     {
-      "branch": "1",
+      "branch": "2",
       "name": "FKey",
       "dialogue": "그럼 마지막으로 가기전에!!! 이봐 젊은이...이 집의 슬픈 전설을...",
       "itemCode": "-1"
     },
     {
-      "branch": "1",
+      "branch": "2",
       "name": "Player",
       "dialogue": "어르신 감사합니다 안녕히계세요!!! 그럼!!",
       "itemCode": "1"
     },
     {
-      "branch": "1",
+      "branch": "2",
       "name": "FKey",
       "dialogue": "아",
       "itemCode": "1"
