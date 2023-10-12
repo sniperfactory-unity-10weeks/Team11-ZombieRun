@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
             //만약 체력이 0 이하라면, 사망
             if (playerHP <= 0)
             {
+                UIManager.instance.GameOver();
                 Die();
             }
         }
