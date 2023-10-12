@@ -9,21 +9,26 @@ public class ZombieMove : MonoBehaviour
     private NavMeshAgent pathFinder;
     private Animator zombieAnimator;
 
-    public float damage = 2f; // °ø°Ý·Â
-    private float timeBetAttack = 1f; //°ø°Ý °£°Ý
-    private float lastAttackTime = 0f;       //ÃÖ±Ù °ø°Ý ½Ã°£
+    public AudioClip zombieAttack;
+    private AudioSource zombiesource;
+
+    public float damage = 2f; // ï¿½ï¿½ï¿½Ý·ï¿½
+    private float timeBetAttack = 1f; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private float lastAttackTime = 0f;       //ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
 
 
     void Start()
     {
 
-        //Å×½ºÆ® À§ÇØ ÄÚ·çÆ¾À» ¿©±â¼­ ½ÇÇà½ÃÄ×½À´Ï´Ù.
-        ////ÀÌÈÄ ¹æ1¿¡¼­ ¿­¼è È¹µæ ½Ã È°¼ºÈ­µÇµµ·Ï º¯°æ ¿¹Á¤
+        //ï¿½×½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½Æ¾ï¿½ï¿½ ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×½ï¿½ï¿½Ï´ï¿½.
+        ////ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È¹ï¿½ï¿½ ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½Çµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         target = GameObject.FindWithTag("Player");
         pathFinder = GetComponent<NavMeshAgent>();
         zombieAnimator = GetComponent<Animator>();
         StartCoroutine(UpdatePath());
+
+        zombiesource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -51,7 +56,7 @@ public class ZombieMove : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        //ÇÃ·¹ÀÌ¾î°¡ °ÔÀÓ¿À¹ö¶ó¸é, ½ÇÇàÇÏÁö ¾ÊÀ½
+        //ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (GameManager.instance.isGameOver)
         {
             /*Rigidbody rb = GetComponent<Rigidbody>();
@@ -59,28 +64,30 @@ public class ZombieMove : MonoBehaviour
             return;
         }
 
-        // ÃÖ±Ù °ø°Ý ½ÃÁ¡¿¡¼­ timeBetAttack ÀÌ»ó ½Ã°£ÀÌ Áö³µ´Ù¸é °ø°Ý °¡´É
+        // ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ timeBetAttack ï¿½Ì»ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (Time.time >= lastAttackTime + timeBetAttack)
         {
 
-            // »ó´ë¹æÀ¸·ÎºÎÅÍ LivingEntity Å¸ÀÔÀ» °¡Á®¿À±â ½Ãµµ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ LivingEntity Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµï¿½
             Player attackTarget = other.GetComponent<Player>();
 
-            // ´êÀº ´ë»óÀÌ ÇÃ·¹ÀÌ¾î¶ó¸é,
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½,
             if (attackTarget != null && other.gameObject == target)
             {
-                //¹ÝÁö ¾ÆÀÌÅÛÀ» ¼ÒÁöÇß´ÂÁö °Ë»ç
+                //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
                 if (GameManager.instance.inventory[(int)GameManager.EItem.Ring])
                 {
-                    //todo: ÇÁ·ÎÆ÷Áî ÆË¾÷À» ¶ç¿ó´Ï´Ù.
+                    //todo: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½.
                     
                 }
-                // ÃÖ±Ù °ø°Ý ½Ã°£À» °»½Å
+                // ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 lastAttackTime = Time.time;
 
-                // °ø°Ý ½ÇÇà
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 //zombieAnimator.SetTrigger("isAttack");
                 attackTarget.OnDamage(damage);
+
+                zombiesource.Play();
             }
         }
     }
