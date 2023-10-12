@@ -54,6 +54,8 @@ public class ZombieMove : MonoBehaviour
         //플레이어가 게임오버라면, 실행하지 않음
         if (GameManager.instance.isGameOver)
         {
+            /*Rigidbody rb = GetComponent<Rigidbody>();
+            rb.constraints = RigidbodyConstraints.FreezeRotationY;*/
             return;
         }
 
