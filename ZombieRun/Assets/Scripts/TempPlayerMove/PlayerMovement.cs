@@ -89,14 +89,13 @@ public class PlayerMovement : MonoBehaviour
 		{
 			StartCoroutine(StartTalk(whoTalk));
 			isInteract = true;
-
         }
 	}
 
 	void PlayerMove()
 	{
 		
-		if(!isTalk)
+		if(!isInteract)
         {
 			//╬у╣заб©Л
             Controller.Move(CurrentMoveVelocity * Time.deltaTime);

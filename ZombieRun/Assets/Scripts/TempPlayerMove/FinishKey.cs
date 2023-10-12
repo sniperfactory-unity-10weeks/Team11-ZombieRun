@@ -7,6 +7,7 @@ public class FinishKey : MonoBehaviour
 	public static int finishKeyDialogueIndex = 0;
 	private void OnDisable()
 	{
+		PlayerMovement.isInteract = false;
 		PlayerMovement.instance.startKTalk(this.gameObject);
 	}
 }

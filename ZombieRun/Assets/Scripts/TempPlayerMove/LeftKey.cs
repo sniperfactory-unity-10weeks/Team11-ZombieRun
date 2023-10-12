@@ -7,7 +7,7 @@ public class LeftKey : MonoBehaviour
 	public static int leftKeyDialogueIndex = 0;
 	private void OnDisable()
 	{
-		
-		PlayerMovement.instance.startKTalk(this.gameObject);
+        PlayerMovement.isInteract = false;
+        PlayerMovement.instance.startKTalk(this.gameObject);
 	}
 }
