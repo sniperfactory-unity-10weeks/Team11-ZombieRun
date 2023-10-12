@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
 
             if (playerHP <= 0)
             {
+                UIManager.instance.GameOver();
                 Die();
             }
         }
