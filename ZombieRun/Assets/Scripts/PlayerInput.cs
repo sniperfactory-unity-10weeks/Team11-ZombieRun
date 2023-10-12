@@ -4,25 +4,33 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-     //╩Г©Кюз ют╥б ╟╗аЖ
+     //О©╫О©╫О©╫О©╫О©╫ О©╫т╥О©╫ О©╫О©╫О©╫О©╫
 
     //--Axis name--//
-    string moveVerticalName = "Vertical";   //╬у╣з ©РаВюс
-    string moveHorizontalName = "Horizontal";   //аб©Л ©РаВюс
-    string rotateXName = "Mouse X"; //╦╤©Л╫╨ ©Ле╛╦╞ю╦╥н аб©Л х╦юЭ
-    //╟╙ гр╢Гю╨ Ё╩╨н©║╪╜╦╦ ╟║╢и, private
+    string moveVerticalName = "Vertical";   //О©╫у╣О©╫ О©╫О©╫О©╫О©╫О©╫О©╫
+    string moveHorizontalName = "Horizontal";   //О©╫б©О©╫ О©╫О©╫О©╫О©╫О©╫О©╫
+    string rotateXName = "Mouse X"; //О©╫О©╫О©╫Л╫╨ О©╫О©╫е╛О©╫О©╫О©╫О©╫О©╫О©╫ О©╫б©О©╫ х╦О©╫О©╫
+    //О©╫О©╫ О©╫р╢О©╫О©╫О©╫ О©╫О©╫О©╫н©О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫, private
     public float moveV { get; private set; }
     public float moveH { get; private set; }
     public float mouseLeft { get; private set; }
     public float rotateX { get; private set; }
 
+    public AudioClip footstepSound; // К╟°Л├▄К╕╛К╔╪ Л°└М∙° AudioClip
+    private AudioSource audioSource; // AudioSource Л╩╢М▐╛К└▄М┼╦
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void FixedUpdate()
     {
-        //todo: ╟тюс ©ю╧Ж ╩Себ╟║ ╣г╦И ют╥б ╟╗аЖ ╧чаЖ ╬й╢б╢ы
-        //╩Сгоаб©Л ют╥б ╟╗аЖ
+        //todo: О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫б╟О©╫ О©╫г╦О©╫ О©╫т╥О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫й╢б╢О©╫
+        //О©╫О©╫О©╫О©╫О©╫б©О©╫ О©╫т╥О©╫ О©╫О©╫О©╫О©╫
         moveV = Input.GetAxis(moveVerticalName);
         moveH = Input.GetAxis(moveHorizontalName);
-        //©ю╦╔бй ╣Е╥║╠в╥н д╚╦ч╤С х╦юЭ
+        //О©╫О©╫О©╫О©╫О©╫О©╫ О©╫Е╥║О©╫в╥О©╫ д╚О©╫ч╤О©╫ х╦О©╫О©╫
         if (Input.GetMouseButton(1))
         {
             rotateX = Input.GetAxis(rotateXName);
@@ -31,8 +39,20 @@ public class PlayerInput : MonoBehaviour
         {
             rotateX = 0;
         }
-
+         if (moveV != 0 || moveH != 0)
+        {
+            PlayFootstepSound();
+        }
     }
-     
 
+    void PlayFootstepSound()
+    {
+        if (audioSource != null && footstepSound != null)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(footstepSound);
+            }
+        }
+    }
 }
