@@ -40,7 +40,7 @@ public class ZombieMove : MonoBehaviour
         while (!GameManager.instance.isGameOver)
         {
             pathFinder.isStopped = false;
-            //pathFinder.SetDestination(target.transform.position);
+            pathFinder.SetDestination(target.transform.position);
             
             yield return new WaitForSeconds(0.25f);
         }
