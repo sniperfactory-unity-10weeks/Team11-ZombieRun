@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     // 대미지를 입는 기능
     public void OnDamage(float damage)
     {
+        Debug.Log("대미지!");
         //아직 죽지 않았다면 체력 감소 처리 실행
         if (!GameManager.instance.isGameOver)
         {
@@ -35,5 +36,7 @@ public class Player : MonoBehaviour
     {
         // 사망 상태를 참으로 변경
         GameManager.instance.isGameOver = true;
+        PlayerMove pm = GetComponent<PlayerMove>();
+        pm.playerAnimator.SetTrigger("isDead");
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-     float moveSpeed = 5f;
+    float moveSpeed = 5f;
     float rotateSpeed = 10f;
 
     PlayerInput playerInput; //플레이어의 입력을 알려주는 컴포넌트
     Rigidbody playerRigidbody;
-    Animator playerAnimator;
+    public Animator playerAnimator;
 
 
     void Start()
@@ -22,6 +22,10 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (GameManager.instance.isGameOver)
+        {
+            return;
+        }
         Move();
         Rotate();
     }
