@@ -246,7 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5b3fd275dde1854c8035a7a6a5c755e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopUp: {fileID: 495832059291364673}
+  CreditPopUp: {fileID: 2420238506487676549}
+  LicencePopUp: {fileID: 495832059291364673}
   txt: {fileID: 5787108224228759715}
   Title: {fileID: 8872362634744638629}
   ButtonPanel: {fileID: 1579508535558448262}
@@ -1250,7 +1251,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5386929412295360410}
         m_TargetAssemblyTypeName: GameStart, Assembly-CSharp
-        m_MethodName: ClosePopUp
+        m_MethodName: CloseLecencePopUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2208,7 +2209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5386929412295360410}
         m_TargetAssemblyTypeName: GameStart, Assembly-CSharp
-        m_MethodName: ClosePopUp
+        m_MethodName: CloseCreditPopUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
