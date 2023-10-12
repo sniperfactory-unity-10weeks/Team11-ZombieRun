@@ -69,6 +69,12 @@ public class ZombieMove : MonoBehaviour
             // 닿은 대상이 플레이어라면,
             if (attackTarget != null && other.gameObject == target)
             {
+                //반지 아이템을 소지했는지 검사
+                if (GameManager.instance.inventory[(int)GameManager.EItem.Ring])
+                {
+                    //todo: 프로포즈 팝업을 띄웁니다.
+                    
+                }
                 // 최근 공격 시간을 갱신
                 lastAttackTime = Time.time;
 

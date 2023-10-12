@@ -12,7 +12,8 @@ public class Item : MonoBehaviour
         {
             GameManager.instance.inventory[ItemNum] = true;   //인벤토리에 추가
             gameObject.SetActive(false);                  //오브젝트 비활성화
-            //todo: 해당 아이템 ui 활성화
+            // 해당 아이템 ui 활성화
+            UIManager.instance.UpdateKeys(ItemNum);
         }
     }
 }
