@@ -21,9 +21,21 @@ public class GameManager : MonoBehaviour
     public bool isGameOver = false; //게임 오버가 되면 true
     public GameObject CameraSet;
 
+    public enum EItem{
+        Key1,       //0
+        Key2,       //1
+        ExitKey,    //2
+        Ring        //3
+    }
+    public bool[] inventory = new bool[4];
+
+
     private void Start()
     {
-        //CameraSet.SetActive(false);
+        for(int i=0; i< inventory.Length; i++)
+        {
+            inventory[i] = false;
+        }
     }
 
     void Update()
