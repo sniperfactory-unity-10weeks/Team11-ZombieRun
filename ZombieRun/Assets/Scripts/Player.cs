@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
             UIManager.instance.Attacked();
             // 대미지만큼 체력 감소
             playerHP -= damage;
+            // HP바 수정
+            UIManager.instance.UpdateHealthBar(damage);
             //만약 체력이 0 이하라면, 사망
             if (playerHP <= 0)
             {

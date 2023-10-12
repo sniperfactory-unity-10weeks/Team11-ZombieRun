@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
     // ÆË¾÷ yes, ¿£µù ¾À ·Îµå
     public void OpenDoor()
     {
-        // SceneManager.LoadScene("Ending");
+        SceneManager.LoadScene("Ending");
     }
     // ÆË¾÷ No, ÆË¾÷ Áö¿ì±â
     public void ClosePopUp()
@@ -81,7 +81,6 @@ public class UIManager : MonoBehaviour
         DoorPopUp.SetActive(false);
     }
 
-    
     // °ø°Ý ¹ÞÀ» ½Ã È­¸é ºÓ¾îÁü
     public void Attacked()
     {
@@ -95,4 +94,5 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         AttackedEffectPanel.SetActive(false);
     }
+
 }
