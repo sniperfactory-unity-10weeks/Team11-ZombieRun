@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CharacterMoveScene.unity
-    guid: ab942df96c7063745836e6e50d3d1480
+    path: Assets/Scenes/Start.unity
+    guid: d96adb3e71f0e7f4196d430e67e99546
   - enabled: 1
     path: Assets/Scenes/Main.unity
-    guid: 017f7091e39e7428bbcd0924263c1d89
+    guid: 457a051d036232b43a89114563c65f25
   - enabled: 1
-    path: Assets/Scenes/Start.unity
-    guid: 6aab53489f5650348adf01fa9aea3148
+    path: Assets/Scenes/Ending.unity
+    guid: 7b70601e2e47ae34986952348bde5b1a
+  - enabled: 1
+    path: Assets/Scenes/HiddenEnding.unity
+    guid: eacad2cce2889124c9dc3c37f7ba9219
   m_configObjects: {}

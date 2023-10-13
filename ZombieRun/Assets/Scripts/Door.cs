@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class Door : MonoBehaviour
         if(DoorNum == (int)GameManager.EItem.ExitKey)
         {
             //엔딩 씬으로 이동합니다.
+            SceneManager.LoadScene("Scenes/Ending");
         }
 
         doorhandle.Play();
