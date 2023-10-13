@@ -26,6 +26,7 @@ public class Item : MonoBehaviour
             if (ItemNum == (int)GameManager.EItem.Ring)
             {
                 //팝업 생성
+                UIManager.instance.ProposeEndingPopUp();
             }
             else
             {

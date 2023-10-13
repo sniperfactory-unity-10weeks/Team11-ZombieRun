@@ -35,6 +35,8 @@ public class UIManager : MonoBehaviour
 
     // OpenDoor 팝업
     [SerializeField] private GameObject DoorPopUp;
+    // Propose 팝업
+    [SerializeField] private GameObject ProposePopUp;
 
     // 공격 받으면 화면 붉어짐
     [SerializeField] private GameObject AttackedEffectPanel;
@@ -76,7 +78,7 @@ public class UIManager : MonoBehaviour
     }
 
     // 문 클릭 시 팝업 활성화
-    public void PopUp()
+    public void DoorEndingPopUp()
     {
         DoorPopUp.SetActive(true);
     }
@@ -91,11 +93,33 @@ public class UIManager : MonoBehaviour
         DoorPopUp.SetActive(false);
     }
 
+    // 반지 들고 문 클릭 시 팝업 활성화
+    public void ProposeEndingPopUp()
+    {
+        ProposePopUp.SetActive(true);
+    }
+    // 팝업 yes, 히든 엔딩 씬 로드
+    public void ProposeYes()
+    {
+        SceneManager.LoadScene("HiddenEnding");
+    }
+    // 팝업 No, 팝업 지우기
+    public void ProposeNo()
+    {
+        ProposePopUp.SetActive(false);
+    }
+
+
+
+
     // 공격 받을 시 화면 붉어짐
     public void Attacked()
     {
         StartCoroutine("AttackedEffect");
     }
+
+
+
 
     // 2초 동안 화면 붉어짐 효과 코루틴
     IEnumerator AttackedEffect()
