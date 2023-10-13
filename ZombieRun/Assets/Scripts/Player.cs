@@ -19,15 +19,13 @@ public class Player : MonoBehaviour
         health = playerHP;
         audioSource = GetComponent<AudioSource>();
     }
-
+    
     public void OnDamage(float damage)
     {
         Debug.Log("피격!");
 
         if (!GameManager.instance.isGameOver)
         {
-            // 피격 사운드 재생
-            PlaySound(damageSound);
 
             UIManager.instance.Attacked();
             playerHP -= damage;
@@ -51,17 +49,6 @@ public class Player : MonoBehaviour
         pm.playerAnimator.SetTrigger("isDead");
 
         audioSource.PlayOneShot(dieSound);
-        // 사망 사운드 재생
-        PlaySound(deathSound);
     }
 
-    private void PlaySound(AudioClip sound)
-    {
-        if (audioSource != null && sound != null)
-        {
-            audioSource.PlayOneShot(sound);
-
-        }
-
-    }
 }
