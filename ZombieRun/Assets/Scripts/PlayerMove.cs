@@ -7,15 +7,11 @@ public class PlayerMove : MonoBehaviour
     float moveSpeed = 5f;
     float rotateSpeed = 10f;
 
-    PlayerInput playerInput; //�÷��̾��� �Է��� �˷��ִ� ������Ʈ
+    PlayerInput playerInput; //플레이어 입력 감지
     Rigidbody playerRigidbody;
-    
-    public AudioClip playerfootstep;
     public Animator playerAnimator;
 
-    private AudioSource playersource;
-
-    Quaternion nowRotate;
+    float nowRotate;
 
 
     void Start()
@@ -23,8 +19,6 @@ public class PlayerMove : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
-
-        playersource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,9 +35,9 @@ public class PlayerMove : MonoBehaviour
     private void Move()
     {
         bool isMove = false;
-        //WASD �����¿� �̵�
+        //WASD : player move
         Vector3 moveDistance = new Vector3();
-        //���� �̵�
+        //if input
         if (playerInput.moveV != 0)
         {
             isMove = true;
@@ -57,19 +51,19 @@ public class PlayerMove : MonoBehaviour
 
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
         playerAnimator.SetBool("isWalk", isMove);
-        playersource.Play();
     }
 
     private void Rotate()
     {
         if (playerInput.rotateX != 0)
         {
-            transform.Rotate(0, playerInput.rotateX * rotateSpeed, 0);
-            nowRotate = transform.rotation;
+            nowRotate += playerInput.rotateX * rotateSpeed;
+            transform.eulerAngles = new Vector3(0, nowRotate, 0);
+
         }
         else
         {
-            transform.rotation = nowRotate;
+            transform.eulerAngles = new Vector3(0, nowRotate, 0);
         }
     }
      
