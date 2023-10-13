@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public int DoorNum; //GameManager.EItem ÂüÁ¶
+    public int DoorNum; //GameManager.EItem ï¿½ï¿½ï¿½ï¿½
 
-    //todo: eÅ°¸¦ ´­·¯ ¿­µµ·Ï º¯°æÇØÁÖ¼¼¿ä
+    //todo: eÅ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && GameManager.instance.inventory[DoorNum])
         {
             this.gameObject.SetActive(false);
         }
-        //Å»Ãâ¿¡ ¼º°øÇßÀ» °æ¿ì
+        //Å»ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         if(DoorNum == (int)GameManager.EItem.ExitKey)
         {
-            //¿£µù ¾ÀÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.
+            //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Õ´Ï´ï¿½.
         }
     }
 }

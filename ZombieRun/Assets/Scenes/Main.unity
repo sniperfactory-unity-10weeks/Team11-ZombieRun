@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2287132262431249737, guid: 7484ae604657a1d489dc4acee1053e91, type: 3}
+      propertyPath: zombieAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: 0a14b81c9eeb97d42861fbdd686e65da, type: 3}
     - target: {fileID: 8699185526497956357, guid: 7484ae604657a1d489dc4acee1053e91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.74
@@ -675,6 +679,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1835492885722728873, guid: 79273486ce8882748a06f0e1fb5f45f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835492885722728873, guid: 79273486ce8882748a06f0e1fb5f45f2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835492885722728873, guid: 79273486ce8882748a06f0e1fb5f45f2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835492885722728873, guid: 79273486ce8882748a06f0e1fb5f45f2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2278888429311614910, guid: 79273486ce8882748a06f0e1fb5f45f2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -872,6 +892,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3235854892609125260, guid: 4724fe5d04666b3459226e87df714864, type: 3}
+      propertyPath: playerfootstep
+      value: 
+      objectReference: {fileID: 8300000, guid: 65d9836027675574b8d070c5718f99c7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
