@@ -16,6 +16,14 @@ public class PlayerInput : MonoBehaviour
     public float mouseLeft { get; private set; }
     public float rotateX { get; private set; }
 
+    public AudioClip footstepSound; // 발소리를 위한 AudioClip
+    private AudioSource audioSource; // AudioSource 컴포넌트
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void FixedUpdate()
     {
         //todo: ���� ���� ���°� �Ǹ� �Է� ���� ���� �ʴ´�
@@ -33,9 +41,18 @@ public class PlayerInput : MonoBehaviour
         }
          if (moveV != 0 || moveH != 0)
         {
-            
+            PlayFootstepSound();
         }
     }
 
-
+    void PlayFootstepSound()
+    {
+        if (audioSource != null && footstepSound != null)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(footstepSound);
+            }
+        }
+    }
 }

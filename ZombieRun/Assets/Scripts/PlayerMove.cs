@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody playerRigidbody;
     public Animator playerAnimator;
 
+
     public AudioClip footstep;
 
     private AudioSource audioSourcefoot;
@@ -23,7 +24,6 @@ public class PlayerMove : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
-
         audioSourcefoot = GetComponent<AudioSource>();
     }
 
@@ -63,6 +63,7 @@ public class PlayerMove : MonoBehaviour
         audioSourcefoot.PlayOneShot(footstep);
         
         }
+
     }
 
     private void Rotate()
