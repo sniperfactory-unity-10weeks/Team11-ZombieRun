@@ -8,8 +8,14 @@ public class Player : MonoBehaviour
     public float playerHP = 10f;
     public float health { get; protected set; }
 
+    public AudioClip hitSound; // 재생 오디오 클립
+    public AudioClip dieSound; // 사망 사운드
+
+    private AudioSource audioSource; // 사용할 오디오 컴포넌트 
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         health = playerHP;
     }
 
@@ -29,6 +35,7 @@ public class Player : MonoBehaviour
                 UIManager.instance.GameOver();
                 Die();
             }
+            audioSource.Play();
         }
     }
 
@@ -37,5 +44,6 @@ public class Player : MonoBehaviour
         GameManager.instance.isGameOver = true;
         PlayerMove pm = GetComponent<PlayerMove>();
         pm.playerAnimator.SetTrigger("isDead");
+        audioSource.Play();
     }
 }
