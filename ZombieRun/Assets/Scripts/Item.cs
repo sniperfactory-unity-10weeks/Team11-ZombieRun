@@ -25,12 +25,12 @@ public class Item : MonoBehaviour
 
             if (ItemNum == (int)GameManager.EItem.Ring)
             {
-                // 아이템 획득 시 소리 재생
-                KeyDrop.Play();
+                //팝업 생성
             }
             else
             {
-
+                // 아이템 획득 시 소리 재생
+                KeyDrop.Play();
             }
 
             gameObject.SetActive(false);                  // 아이템 비활성화
