@@ -355,6 +355,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &397861116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7845808234559293148, guid: 54239f3a05de33243974ee61c7bc8231, type: 3}
+  m_PrefabInstance: {fileID: 1136382184558716025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &397861122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397861116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87681c6cf2ea52147b24b244cc84c134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Zombie: {fileID: 663718632}
 --- !u!1001 &509361683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -617,6 +635,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 982de896864b64323b486344285af1f3, type: 3}
+--- !u!1 &663718632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8699185526498316261, guid: 7484ae604657a1d489dc4acee1053e91, type: 3}
+  m_PrefabInstance: {fileID: 269643910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &802909265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1119,6 +1142,34 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6844609794576922446, guid: 4724fe5d04666b3459226e87df714864, type: 3}
   m_PrefabInstance: {fileID: 1487503885}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1633330607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7501328706282919086, guid: 54239f3a05de33243974ee61c7bc8231, type: 3}
+  m_PrefabInstance: {fileID: 1136382184558716025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1633330612
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633330607}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Height: 0.31619036
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.15809518, z: 0}
 --- !u!1 &1697646924 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 76285948355785991, guid: 34d554ae3e0023f418ff51b8621370a0, type: 3}
@@ -1379,6 +1430,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2896145423050497696, guid: 54239f3a05de33243974ee61c7bc8231, type: 3}
       insertIndex: -1
       addedObject: {fileID: 351645212}
+    - targetCorrespondingSourceObject: {fileID: 7845808234559293148, guid: 54239f3a05de33243974ee61c7bc8231, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 397861122}
+    - targetCorrespondingSourceObject: {fileID: 7501328706282919086, guid: 54239f3a05de33243974ee61c7bc8231, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1633330612}
   m_SourcePrefab: {fileID: 100100000, guid: 54239f3a05de33243974ee61c7bc8231, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
