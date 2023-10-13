@@ -11,6 +11,11 @@ public class PlayerMove : MonoBehaviour
     Rigidbody playerRigidbody;
     public Animator playerAnimator;
 
+
+    public AudioClip footstep;
+
+    private AudioSource audioSourcefoot;
+
     float nowRotate;
 
 
@@ -19,6 +24,7 @@ public class PlayerMove : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
+        audioSourcefoot = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,6 +57,13 @@ public class PlayerMove : MonoBehaviour
 
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
         playerAnimator.SetBool("isWalk", isMove);
+
+        if (isMove && !audioSourcefoot.isPlaying) {
+        // audioSourcefoot.clip = footstep;
+        audioSourcefoot.PlayOneShot(footstep);
+        
+        }
+
     }
 
     private void Rotate()
@@ -67,5 +80,4 @@ public class PlayerMove : MonoBehaviour
         }
     }
      
-
 }

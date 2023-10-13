@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public int DoorNum; //GameManager.EItem ÂüÁ¶
+    public int DoorNum; //GameManager.EItem ì°¸ì¡°
 
-    //todo: eÅ°¸¦ ´­·¯ ¿­µµ·Ï º¯°æÇØÁÖ¼¼¿ä
+    public AudioClip door;
+
+    private AudioSource doorhandle;
+
+    void Start()
+    {
+       doorhandle = GetComponent<AudioSource>();
+    }
+
+    //todo: eí‚¤ë¥¼ ëˆŒëŸ¬ ì—´ë„ë¡ ë³€ê²½í•´ì£¼ì„¸ìš”
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && GameManager.instance.inventory[DoorNum])
         {
             this.gameObject.SetActive(false);
         }
-        //Å»Ãâ¿¡ ¼º°øÇßÀ» °æ¿ì
+        //íƒˆì¶œì— ì„±ê³µí–ˆì„ ê²½ìš°
         if(DoorNum == (int)GameManager.EItem.ExitKey)
         {
-            //¿£µù ¾ÀÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.
+            //ì—”ë”© ì”¬ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.
         }
+
+        doorhandle.Play();
     }
 }
