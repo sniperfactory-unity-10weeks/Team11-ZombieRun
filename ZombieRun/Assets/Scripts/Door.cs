@@ -6,6 +6,15 @@ public class Door : MonoBehaviour
 {
     public int DoorNum; //GameManager.EItem ����
 
+    public AudioClip door;
+
+    private AudioSource doorhandle;
+
+    void Start()
+    {
+       doorhandle = GetComponent<AudioSource>();
+    }
+
     //todo: eŰ�� ���� ������ �������ּ���
     private void OnTriggerEnter(Collider other)
     {
@@ -18,5 +27,7 @@ public class Door : MonoBehaviour
         {
             //���� ������ �̵��մϴ�.
         }
+
+        doorhandle.Play();
     }
 }

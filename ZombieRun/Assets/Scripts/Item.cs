@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public int ItemNum; //GameManager.EItem ÂüÁ¶
+    public int ItemNum; // GameManager.EItemì— í•´ë‹¹í•˜ëŠ” ê°’
+
+    private AudioSource KeyDrop;
+
+    void Start()
+    {
+        KeyDrop = GetComponentInParent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            GameManager.instance.inventory[ItemNum] = true;   //ÀÎº¥Åä¸®¿¡ Ãß°¡
-            gameObject.SetActive(false);                  //¿ÀºêÁ§Æ® ºñÈ°¼ºÈ­
-            // ÇØ´ç ¾ÆÀÌÅÛ ui È°¼ºÈ­
+            GameManager.instance.inventory[ItemNum] = true;   // ì•„ì´í…œ íšë“ ì²˜ë¦¬
+            
+            // í•´ë‹¹ ì•„ì´í…œì— ëŒ€í•œ UI ì—…ë°ì´íŠ¸
             UIManager.instance.UpdateKeys(ItemNum);
+
+            // ì•„ì´í…œ íšë“ ì‹œ ì†Œë¦¬ ì¬ìƒ
+            KeyDrop.Play();
+            gameObject.SetActive(false);                  // ì•„ì´í…œ ë¹„í™œì„±í™”
         }
     }
 }
